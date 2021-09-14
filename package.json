@@ -1,0 +1,25 @@
+{
+    "name": "barelang-vscode",
+    "displayName": "barelang-vscode",
+    "description": "vscode support fir barelang",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "bare",
+            "aliases": ["bare", "bare"],
+            "extensions": [".ba"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "bare",
+            "scopeName": "source.ba",
+            "path": "./syntaxes/bare.tmLanguage.json"
+        }]
+    }
+}

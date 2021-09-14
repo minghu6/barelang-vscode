@@ -1,0 +1,83 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "bare",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#idents"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#lits"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.less.bare",
+					"match": "\\b(if|f|rs(?=#))\\b"
+				},
+				{
+					"name": "keyword.operator.bare",
+					"match": "\\b(\\+|-|\\*|/|%)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.bare",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.bare",
+					"match": "\\\\."
+				}
+			]
+		},
+		"idents": {
+			"patterns": [
+				{
+					"name": "entity.name.function.bare",
+					"match": "(?<=f\\W+)[a-z_][a-z\\d_]*"
+				},
+				{
+					"name": "variable.parameter.bare",
+					"match": "\\b((?<=\\(\\W+)[a-z_][a-z\\d_]*|(?<=,\\W+)[a-z_][a-z\\d_]*)"
+				},
+				{
+					"name":"entity.name.type.bare",
+					"match": "\\b(int|float)\\b"
+				},
+				{
+					"name": "variable.bare",
+					"match": "\\b[a-zA-Z_][a-zA-Z\\d_]*\\b"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.bare",
+					"match": "//.*"
+				}
+			]
+		},
+		"lits": {
+			"patterns": [
+				{
+					"name": "constant.numeric",
+					"match": "\\d+"
+				}
+			]
+		}
+	},
+	"scopeName": "source.ba"
+}
